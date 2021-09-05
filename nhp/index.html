@@ -200,10 +200,11 @@
                             </div>
                         </div> -->
                         <h6 style="color:#8899a5"> Neural Human Performer can reconstruct a performance of an unseen subject with unseen poses.</h6>
-
-                        <video width="70%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                            <source src="images/abstract_video.mp4" type="video/mp4">
-                        </video>
+                        <div>
+                            <video width="70%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                                <source src="images/abstract_video.mp4" type="video/mp4">
+                            </video>
+                        </div>
                         <p class="text-justify">
                             In this paper, we aim at synthesizing a free-viewpoint video of an arbitrary human performance using sparse multi-view cameras. Recently, several works have proposed to use pixel-aligned radiance fields to enable generalization to arbitrary new scenes at test time. However, it is still highly challenging to reconstruct human performance from sparse input views due to the heavy occlusions and dynamic articulations of body parts. To tackle this, we propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric human body model for robust performance capture. Specifically, we first introduce a temporal transformer that aggregates trackable visual features based on the skeletal body motions over video frames. Moreover, a multi-view transformer is proposed to perform cross-attention between the temporally-fused features and the pixel-aligned features at each time step to integrate observations on the fly from multiple views. Experiments on ZJU-MoCap and AIST datasets show that our method significantly outperforms recent generalizable NeRF methods on unseen identities and poses.
                         </p>
