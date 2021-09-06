@@ -172,33 +172,9 @@
             <!--<div class="row mb-3 pt-2">-->
             <div class="row mb-3 pt-2">
                 <div class="col-md-8 mx-auto">
-                
-                    <!--<div class="col-12 text-center">-->
-                    <!--<div class="container">-->
+
                     <div id="dynamic-teaser">
-                    <!-- <div id="dynamic-teaser">
-                        
-                        <div id="teaser-dtu" class="pt-3 pb-4">
-                            <div class="row gif-label pb-1 no-gutters">
-                                <div class="col-6">3 Input Views</div>
-                                <div class="col-2"></div>
-                                <div class="col-2"><strong>pixelNeRF</strong></div>
-                                <div class="col-2">3-view NeRF</div>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-6">
-                                    <img src="img/teaser/dtu_inputs.jpg" class="img-responsive">
-                                </div>
-                                <div class="col-2 io-arrow">
-                                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" />
-                                    </svg>
-                                </div>
-                                <div class="col-4">
-                                    <img src="img/teaser/dtu_outputs_sm.gif" class="img-responsive">
-                                </div>
-                            </div>
-                        </div> -->
+
                         <h6 style="color:#8899a5"> Neural Human Performer can reconstruct a performance of an unseen subject with unseen poses.</h6>
                         <div class="col-12 text-center">
                             
@@ -210,20 +186,28 @@
                             In this paper, we aim at synthesizing a free-viewpoint video of an arbitrary human performance using sparse multi-view cameras. Recently, several works have proposed to use pixel-aligned radiance fields to enable generalization to arbitrary new scenes at test time. However, it is still highly challenging to reconstruct human performance from sparse input views due to the heavy occlusions and dynamic articulations of body parts. To tackle this, we propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric human body model for robust performance capture. Specifically, we first introduce a temporal transformer that aggregates trackable visual features based on the skeletal body motions over video frames. Moreover, a multi-view transformer is proposed to perform cross-attention between the temporally-fused features and the pixel-aligned features at each time step to integrate observations on the fly from multiple views. Experiments on ZJU-MoCap and AIST datasets show that our method significantly outperforms recent generalizable NeRF methods on unseen identities and poses.
                         </p>
                     </div> <!-- dynamic-teaser -->
-                    <!-- <img id="teaser" src="img/teaser.png" class="img-responsive" alt="teaser figure"> -->
-                    <!-- <p class="text-justify">
-                        We propose pixelNeRF, a learning framework that predicts a continuous neural scene representation conditioned on
-                        one or few input images.
-                        The existing approach for
-                        constructing neural radiance fields&nbsp;<a href="https://www.matthewtancik.com/nerf">[Mildenhall et al. 2020]</a>
-                        involves optimizing the representation to every scene independently, requiring many calibrated views and significant compute time.
-                        We take a step towards resolving these shortcomings
-                        by introducing an architecture that conditions a NeRF on image inputs in a fully convolutional manner. This allows the network to be trained across multiple scenes to learn a scene prior, enabling it to perform novel view synthesis in a feed-forward manner from a sparse set of views (as few as one).
-                    </p> -->
-
-
                 </div>
             </div>
+
+            <div class="row mb-3 pt-2">
+                <div class="col-md-8 mx-auto">
+
+                    <div id="zju-seen-unseen">
+                        <p class="text-justify">
+                            We compare our method with Neural Body [1] on seen model's unseen poses. Note that Neural body was per-subject optimized (one network for one person) while our model was optimized on all training subjects (one network for multiple people).
+                        </p>
+                        
+                        <div class="col-12 text-center">
+                            
+                            <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                                <source src="images/seen_human_unseen_pose_ex0_zju.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                    </div> <!-- dynamic-teaser -->
+                </div>
+            </div>
+
             <div class="row mb-4" id="overview-video">
                 <div class="col-md-8 mx-auto grey-container">
                     <h4 class="pb-2">Overview Video</h4>
@@ -235,16 +219,15 @@
             <div class="row mb-3">
                 <div class="col-md-8 mx-auto">
                     <p class="text-justify">
-                        Leveraging the volume rendering approach of NeRF, our model can be trained directly from images with no explicit 3D supervision.
-                        We conduct extensive experiments on ShapeNet benchmarks for single image novel view synthesis tasks with held-out objects as well as entire unseen categories.
-                        We further demonstrate the flexibility of pixelNeRF by demonstrating it on multi-object ShapeNet scenes and real scenes from the DTU dataset. In all cases, pixelNeRF outperforms current state-of-the-art baselines for novel view synthesis and single image 3D reconstruction.
+                        We propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric body model for robust performance capture. Aside from a natural advantage of the parametric body model as a geometric prior, the core of our method is a combination of temporal and multi-view Transformers which helps the best use of the spatio-temporal observations, to compute the density and color of a query point. First, the temporal transformer aggregates trackable visual features based on the input skeletal body motions over video frames. The following multi-view transformer performs cross-attention between the temporally-augmented skeletal features and the pixel-aligned features from each time step. 
+                        The proposed modules collectively contribute to the adaptive aggregation of multi-time and multi-view information, and finally contribute to the significant improvement of synthesis results in different generalization settings.
                     </p>
                     <img src="images/overview.png" class="img-responsive" alt="pipeline">
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-md-8 mx-auto">
-                    <h4>Feed-forward NeRF from One View</h4>
+                    <h4>Free-viewpoint rendering - Seen models' unseen poses</h4>
                     <p class="text-justify">
                         Using multiview image supervision, we train a single pixelNeRF to 13 largest object categories
                         in ShapeNet in order to perform novel-view synthesis on unseen objects.
