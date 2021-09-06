@@ -183,7 +183,7 @@
                             </video>
                         </div>
                         <p class="text-justify">
-                            In this paper, we aim at synthesizing a free-viewpoint video of an arbitrary human performance using sparse multi-view cameras. Recently, several works have proposed to use pixel-aligned radiance fields to enable generalization to arbitrary new scenes at test time. However, it is still highly challenging to reconstruct human performance from sparse input views due to the heavy occlusions and dynamic articulations of body parts. To tackle this, we propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric human body model for robust performance capture. Specifically, we first introduce a temporal transformer that aggregates trackable visual features based on the skeletal body motions over video frames. Moreover, a multi-view transformer is proposed to perform cross-attention between the temporally-fused features and the pixel-aligned features at each time step to integrate observations on the fly from multiple views. Experiments on ZJU-MoCap and AIST datasets show that our method significantly outperforms recent generalizable NeRF methods on unseen identities and poses.
+                            In this paper, we aim at synthesizing a free-viewpoint video of an arbitrary human performance using sparse multi-view cameras. Recently, several works have addressed this problem by learning person-specific radiance fields to capture the appearance of a particular human. In parallel, some work proposed to use pixel-aligned features to generalize radiance fields to arbitrary new scenes and objects at test time. Adopting such approaches to humans, however, is highly challenging due to the heavy occlusions and dynamic articulations of body parts. To tackle this, we propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric human body model for robust performance capture. Specifically, we first introduce a temporal transformer that aggregates trackable visual features based on the skeletal body motions over video frames. Moreover, a multi-view transformer is proposed to perform cross-attention between the temporally-fused features and the pixel-aligned features at each time step to integrate observations on the fly from multiple views. Experiments on the ZJU-MoCap and AIST datasets show that our method significantly outperforms recent generalizable NeRF methods on unseen identities and poses.                            
                         </p>
                     </div> <!-- dynamic-teaser -->
                 </div>
@@ -202,8 +202,8 @@
             <div class="row mb-3">
                 <div class="col-md-8 mx-auto">
                     <p class="text-justify">
-                        We propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric body model for robust performance capture. Aside from a natural advantage of the parametric body model as a geometric prior, the core of our method is a combination of temporal and multi-view Transformers which helps the best use of the spatio-temporal observations, to compute the density and color of a query point. First, the temporal transformer aggregates trackable visual features based on the input skeletal body motions over video frames. The following multi-view transformer performs cross-attention between the temporally-augmented skeletal features and the pixel-aligned features from each time step. 
-                        The proposed modules collectively contribute to the adaptive aggregation of multi-time and multi-view information, and finally contribute to the significant improvement of synthesis results in different generalization settings.
+
+                        we propose Neural Human Performer, a novel approach that learns generalizable radiance fields based on a parametric body model for robust performance capture. In addition to exploiting a parametric body model as a geometric prior, the core of our method is a combination of temporal and multi-view transformers which help to effectively aggregate spatio-temporal observations to robustly compute the density and color of a query point. First, the temporal transformer aggregates trackable visual features based on the input skeletal body motion over the video frames. The following multi-view transformer performs cross-attention between the temporally-augmented skeletal features and the pixel-aligned features from each time step. The proposed modules collectively contribute to the adaptive aggregation of multi-time and multi-view information, resulting in significant improvements in synthesis results in different generalization settings.
                     </p>
                     <img src="images/overview.png" class="img-responsive" alt="pipeline">
                 </div>
@@ -307,18 +307,17 @@
 }</textarea>
                 </div>
             </div>-->
-            <!--<div class="row mb-3">
+            <div class="row mb-3">
                 <div class="col-md-8 mx-auto">
                     <h4>Acknowledgements</h4>
                     <p class="text-justify">
-                        We thank Shubham Goel and Hang Gao for comments on the text. We also thank
-                        Emilien Dupont and Vincent Sitzmann for helpful discussions.
-                        This website is inspired by the template of <a href="http://mgharbi.com/">Micha&euml;l Gharbi</a>.
+                        We thank <a href="https://pengsida.net/">Sida Peng</a> for helpful discussion on implementation details of <a href="https://zju3dv.github.io/neuralbody/">Neural Body</a>. We thank <a href="https://www.liruilong.cn/">Ruilong li</a> and <a href="https://alexyu.net/">Alex Yu</a> for discussion on the <a href="https://google.github.io/aichoreographer/">AIST++</a> dataset and <a href="https://alexyu.net/pixelnerf/">pixelNeRF</a>details.
+                        This website is inspired by the template of <a href="https://alexyu.net/">Alex Yu</a>.
                     </p>
                     <p class="text-justify">
-                        Please send any questions or comments to <a href="https://alexyu.net">Alex Yu</a>.
+                        Please send any questions or comments to <a href="https://youngjoongunc.github.io/">YoungJoong Kwon</a>.
                     </p>
                 </div>
-            </div> -->
+            </div>
         </div> <!-- container -->
     </body>
