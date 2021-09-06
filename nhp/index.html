@@ -229,41 +229,27 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-3 pt-2">
                 <div class="col-md-8 mx-auto">
-                    <h4>Free-viewpoint rendering - Seen models' unseen poses</h4>
-                    <p class="text-justify">
-                        Using multiview image supervision, we train a single pixelNeRF to 13 largest object categories
-                        in ShapeNet in order to perform novel-view synthesis on unseen objects.
-                        Our approach operates in <strong>view-space</strong>&mdash;as opposed to canonical&mdash;and requires <strong>no test-time optimization</strong>.
-                        Nevertheless, in terms of image metrics, we significantly outperform existing methods quantitatively, as shown in the paper.
-                    </p>
-                    <div class="row pt-1 pb-1">
-                        <div class="col-md-6">
-                            <div class="row gif-label">
-                                <div class="col-2">Input</div>
-                                <div class="col-2">SoftRas</div>
-                                <div class="col-2">DVR</div>
-                                <div class="col-2">SRN</div>
-                                <div class="col-2"><strong>pixelNeRF</strong></div>
-                                <div class="col-2">GT</div>
-                            </div>
-                            <img src="img/gif/shapenet_000.gif" class="img-responsive" alt="shapenet results animated">
+
+                    <div id="zju-seen-unseen">
+                        <h4>Free-viewpoint rendering - Unseen models' unseen poses</h4>
+                        <p class="text-justify">
+                            We compare our method with pixelNeRF [2] on unseen model's unseen poses.
+                        </p>
+                        
+                        <div class="col-12 text-center">
+                            
+                            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                                <source src="images/unseen_human_unseen_pose_ex0_zju.mp4" type="video/mp4">
+                            </video>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row gif-label">
-                                <div class="col-2">Input</div>
-                                <div class="col-2">SoftRas</div>
-                                <div class="col-2">DVR</div>
-                                <div class="col-2">SRN</div>
-                                <div class="col-2"><strong>pixelNeRF</strong></div>
-                                <div class="col-2">GT</div>
-                            </div>
-                            <img src="img/gif/shapenet_001.gif" class="img-responsive" alt="shapenet results animated">
-                        </div>
-                    </div>
+
+                    </div> <!-- dynamic-teaser -->
                 </div>
             </div>
+
+
             <div class="row mb-3">
                 <div class="col-md-8 mx-auto">
                     <h4>Scene-level Representation</h4>
