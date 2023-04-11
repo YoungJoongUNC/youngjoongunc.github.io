@@ -244,7 +244,8 @@
                     <div id="zju-unseen-unseen">
                         <h4>Identity generalization - Pose animation</h4>
                         <p class="text-justify">
-                            We compare our method with Animatable NeRF. Note that Animatable NeRF is a per-subject optimization method, while our method is generalizable.
+                            Our method can create an avatar and animate it given the still multi-view images of the unseen subject. And our method even outperforms the per-subject optimized Animatable NeRF.
+
                         </p>
 
                         <div class="col-12 text-center">
@@ -262,16 +263,36 @@
             <div class="row mb-3 pt-2">
                 <div class="col-md-8 mx-auto">
 
-                    <div id="recon-zju-seen-unseen">
-                        <h4>3D Reconstruction - Unseen models' unseen poses</h4>
+                    <div id="monocap-nvs">
+                        <h4>Cross-dataset generalization - Novel-view synthesis</h4>
                         <p class="text-justify">
-                            We compare our method with pixelNeRF [2] on unseen model's unseen poses.
+                            We compare our method with NHP on unseen model's unseen poses.
                         </p>
 
                         <div class="col-12 text-center">
 
                             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                                <source src="images/recon_unseen_human_unseen_pose_ex0_zju.mp4" type="video/mp4">
+                                <source src="images/cross dataset nvs monocap ex2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                    </div> <!-- dynamic-teaser -->
+                </div>
+            </div>
+
+            <div class="row mb-3 pt-2">
+                <div class="col-md-8 mx-auto">
+
+                    <div id="monocap-reposing">
+                        <h4>Cross-dataset generalization - Pose animation</h4>
+                        <p class="text-justify">
+                            We compare our method with NHP on unseen model's unseen poses.
+                        </p>
+
+                        <div class="col-12 text-center">
+
+                            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                                <source src="images/cross dataset reposing monocap ex2.mp4" type="video/mp4">
                             </video>
                         </div>
 
